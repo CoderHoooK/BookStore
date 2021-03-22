@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link href="../static/asserts/css/bootstrap.min.css" th:href = "@{/webjars/bootstrap/5.0.0-beta2/css/bootstrap.css}" rel="stylesheet">
+        <link href="../static/asserts/css/index.css" th:href="@{/asserts/css/index.css}" rel="stylesheet" type="text/css">
+        <title>首页</title>
+    </head>
+    <body>
+        <div class="topbar" th:fragment="topbar">
+            <a href="#" th:href="${session.loginUser} == null ? @{/login}:@{/orderinfo}" target="_blank" class="login" th:text="${session.loginUser} == null ? '登录':${session.loginUser}" >登录</a>
+            <a href="#" class="shoppingcart" th:href="@{/shoppingcart(cid = ${session.cid})}">
+                <img src="../static/asserts/img/shoppingcart.svg" th:src="@{/asserts/img/shoppingcart.svg}">
+                购物车
+            </a>
+        </div>
+        <div id="mid">
+            <div class="leftblank">
+                <div class="leftblank_name">分类</div>
+                <div class="cqy" th:class="${static}==1 ? 'cqy_1':'cqy'">
+                    <a th:href="@{/literature(page=1)}">文学</a>
+                </div>
+                <div class="cqy" th:class="${static}==2 ? 'cqy_1':'cqy'">
+                    <a  th:href="@{/exercisebooks(page=1)}">中小学教辅</a>
+                </div>
+                <div class="cqy" th:class="${static}==3 ? 'cqy_1':'cqy'">
+                    <a th:href="@{/novel(page=1)}">小说</a>
+                </div>
+                <div class="cqy" th:class="${static}==4 ? 'cqy_1':'cqy'">
+                    <a th:href="@{/success(page=1)}">成功/励志</a>
+                </div>
+                <div class="cqy" th:class="${static}==5 ? 'cqy_1':'cqy'">
+                    <a th:href="@{/exam(page=1)}">考试</a>
+                </div>
+                <div class="cqy" th:class="${static}==6 ? 'cqy_1':'cqy'">
+                    <a th:href="@{/history(page=1)}">历史</a>
+                </div>
+                <div class="cqy" th:class="${static}==7 ? 'cqy_1':'cqy'">
+                    <a th:href="@{lang(page=1)}">外语</a>
+                </div>
+                <div class="cqy" th:class="${static}==8 ? 'cqy_1':'cqy'">
+                    <a th:href="@{/manager(page=1)}">管理</a>
+                </div>
+                <div class="cqy" th:class="${static}==9 ? 'cqy_1':'cqy'">
+                    <a th:href="@{literatureofyoung(page=1)}">青春文学</a>
+                </div>
+                <div class="cqy" th:class="${static}==10 ? 'cqy_1':'cqy'">
+                    <a th:href="@{/law(page=1)}">法律</a>
+                </div>
+                <div class="cqy" th:class="${static}==11 ? 'cqy_1':'cqy'">
+                    <a th:href="@{/computer(page=1)}">计算机</a>
+                </div>
+                <div class="cqy" th:class="${static}==12 ? 'cqy_1':'cqy'">
+                    <a th:href="@{/ancientbook(page=1)}">古籍</a>
+                </div>
+
+
+            </div>
+            <div class="mainbox">
+                <div class="search">
+                    <form action="/search">
+                        <span>
+                            <div class="box1">
+                                <input id="kw" name="cte" class="s_ipt" value="" maxlength="255" autocomplete="off" placeholder="">
+                            </div>
+                        </span>
+                        <span>
+                            <a href="#">
+                                <div class="bnt_1">
+                                    <button type="submit" style="background-color:transparent;
+    border-style:none;">
+                                        <img src="../static/asserts/img/Zoom.svg" th:src="@{/asserts/img/Zoom.svg}">
+                                    </button>
+
+                                </div>
+                            </a>
+                        </span>
+                    </form>
+
+                </div>
+                <div class="mybr"></div>
+                <div class="books">
+                    <div class="card" th:each="book:${books}">
+                        <span>
+                            <div class="pic">
+                                <a href="#">
+                                    <img class='bookimg' src="#" th:src="${book.img}">
+                                </a>
+                            </div>
+                            <div class="c_text">
+                                <a href="#" th:text="${book.title}" ></a>
+                                <p style="font-size: 14px;" >作者:[[${book.author}]]</p>
+                                <p style="color: #c30;  font-size: 14px;">售价:[[${book.price}]]元</p>
+                                <div class="bnt_2" style="background:#ff0036;border-radius: 5px;width: 100px;
+                                    height: 30px; margin-left: 10px">
+                                    <a href="#" style=" position: relative;
+                                                        text-decoration:none;
+                                                        color: white;
+                                                        font-size:15px;" th:href="${session.loginUser}==null?@{/login}:@{/order(bid=${book.bid},cid=${session.cid})}">
+                                                        加入购物车
+                                    </a>
+                                    </div>
+                            </div>
+                        </span>
+
+                    </div>
+                    <nav class="tiaoz" aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous" th:href="@{${categ}(page=${page}-1)}">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#"  th:href="@{${categ}(page=${page})}" th:text="${page}">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#" th:href="@{${categ}(page=${page}+1)}" th:text="${page}+1">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#" th:href="@{${categ}(page=${page}+2)}" th:text="${page}+2">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next" th:href="@{${categ}(page=${page}+1)}">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+        </div>
+    </body>
+</html>

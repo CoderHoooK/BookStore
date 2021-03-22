@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>填写地址</title>
+    <link href="../static/asserts/css/bootstrap.min.css"  th:href = "@{/webjars/bootstrap/5.0.0-beta2/css/bootstrap.css}" rel="stylesheet">
+    <link href="../static/asserts/css/cart.css" th:href="@{/asserts/css/cart.css}" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+    <div class="topbar" th:replace="index::topbar" >
+    </div>
+    <div class="listsp_2" style=" overflow-y: auto;">
+        <form th:action="@{/pay}">
+            <div class="form-group">
+                <label for="exampleFormControlInput1">联系电话</label>
+                <input  class="form-control" id="exampleFormControlInput1" name="numberofphone" placeholder="电话号码">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">省份</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="sf">
+                    <option>安徽省</option>
+                    <option>北京市</option>
+                    <option>重庆市</option>
+                    <option>福建省</option>
+                    <option>甘肃省</option>
+                    <option>广东省</option>
+                    <option>广西省</option>
+                    <option>贵州省</option>
+                    <option>海南省</option>
+                    <option>河北省</option>
+                    <option>河南省</option>
+                    <option>黑龙江省</option>
+                    <option>湖北省</option>
+                    <option>湖南省</option>
+                    <option>吉林省</option>
+                    <option>江苏省</option>
+                    <option>江西省</option>
+                    <option>辽宁省</option>
+                    <option>内蒙古</option>
+                    <option>宁夏回族</option>
+                    <option>青海省</option>
+                    <option>山东省</option>
+                    <option>山西省</option>
+                    <option>陕西省</option>
+                    <option>上海市</option>
+                    <option>四川省</option>
+                    <option>天津市</option>
+                    <option>西藏</option>
+                    <option>新疆</option>
+                    <option>西藏</option>
+                    <option>云南省</option>
+                    <option>浙江省</option>
+
+
+
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">详细地址</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="dads"></textarea>
+            </div>
+                <button type="submit" class="btn btn-outline-primary">确认</button>
+        </form>
+
+
+    </div>
+</body>
+</html>

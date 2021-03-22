@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>修改</title>
+    <link href="../static/asserts/css/bootstrap.min.css" th:href = "@{/webjars/bootstrap/5.0.0-beta2/css/bootstrap.css}" rel="stylesheet">
+    <link href="../static/asserts/css/index.css" th:href="@{/asserts/css/ht.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <form th:action="@{/updating}">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">BID</label>
+            <input type="text" class="form-control" th:value="${book.getBid()}" name="bid">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">书名</label>
+            <input type="text" class="form-control" th:value="${book.getTitle()}" id="exampleFormControlInput1" name="title">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">作者</label>
+            <input type="text" class="form-control"  name="author" th:value="${book.getAuthor()}">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1" >类别</label>
+            <input type="text" class="form-control" th:value="${book.getCategories()}" name="categories">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1" >图片地址</label>
+            <input type="text" class="form-control" th:value="${book.getImg()}" name="img">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1" >价格</label>
+            <input type="text" class="form-control" th:value="${book.getPrice()}" name="price">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">简介</label>
+            <textarea class="form-control" name="intro" th:text="${book.getIntro()}" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-left:900px;margin-top:100px;width: 100px;height: 50px;">确定</button>
+    </form>
+
+</body>
+</html>

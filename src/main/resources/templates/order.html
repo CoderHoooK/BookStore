@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--    <link href="#" th:href = "@{/webjars/bootstrap/5.0.0-beta2/css/bootstrap.css}" rel="stylesheet">-->
+    <!--    <link href="#" th:href="@{/asserts/css/cart.css}" rel="stylesheet" type="text/css">-->
+    <link href="../static/asserts/css/bootstrap.min.css" th:href = "@{/webjars/bootstrap/5.0.0-beta2/css/bootstrap.css}" rel="stylesheet">
+    <link href="../static/asserts/css/index.css" th:href="@{/asserts/css/cart.css}" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <title>订单</title>
+</head>
+<body>
+<div th:replace="index::topbar"></div>
+    <div class="listsp" style=" overflow-y: auto;">
+        <div class="lip" th:each="book:${books}">
+            <div class="pic">
+                <img src="#" th:src="${book.img}">
+            </div>
+            <div class="c_text">
+                <a href="#" th:text="${book.title}">你当像鸟飞往你的山（比尔・盖茨年度特别推荐，登顶《纽约时报》</a>
+                <p style="font-size: 14px;" >作者:[[${book.author}]]</p>
+                <p style="color: #c30;  font-size: 14px;" >售价:[[${book.price}]]元</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

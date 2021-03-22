@@ -1,0 +1,128 @@
+*{
+    margin:0;
+    padding:0;
+    list-style:none;
+    overflow:auto;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {display:none}
+input:focus {
+    outline: 0;
+    border-color: #f5f5f5 ;
+}
+button:focus{
+    border: 0px;
+}
+body{
+    position: absolute;
+    width: 1920px;
+    height: 100%;
+    float: left;
+}
+.topbar{
+    width:100%;
+    height:35px;
+    background: #f5f5f5;
+    position: relative;
+}
+.topbar img{
+    position: relative;
+    top:-1px;
+    width: 17px;
+    margin-left: 9px;
+}
+.topbar a{
+    position: relative;
+    text-decoration:none;
+    color: #6c757d;
+    font-size:13px;
+}
+a{
+    text-decoration:none;
+    color: #404040;
+    font-size:17px;
+}
+.shoppingcart{
+    top: 5px;
+    position: relative;
+}
+.login{
+    top:5px;
+    margin-left:90%;
+}
+
+.listsp{
+    margin-left: 250px;
+    width: 1400px;
+    height: 90%;
+    overflow-y:hidden;
+}
+.lip{
+    position: relative;
+    width: 80%;
+    height: 200px;
+    margin-top: 20px;
+    margin-left: 10%;
+    background: white;
+    border-radius: 7px;
+    box-shadow: 10px 5px 20px 0px grey;
+    overflow-y: hidden;
+}
+.btn btn-primary{
+    position: fixed;
+    top: 300px;
+    left: 1600px;
+}
+.btn_4{
+    text-align: center;
+    font-size: 19px;
+    padding-top: 25px;
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    color: white;
+    border-radius: 100%;
+    background: deepskyblue;
+    top: 400px;
+    left: 1600px;
+    box-shadow: 10px 5px 20px -9px grey;
+}
+.pic{
+    margin: 20px;
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+}
+.c_text{
+    margin-left: 400px;
+    padding-top: 30px;
+    text-align: center;
+    width: 500px;
+    height: 100%;
+    background: white;
+    display: inline-block;
+}
+.bnt_2{
+    border-radius: 5px 5px 5px 5px;
+    width: 140px;
+    height: 32px;
+    background: #ff0036;
+    margin-left: 150px;
+    padding-top: 3px;
+    color: whitesmoke;
+}
+.bnt_2>a{
+    color: whitesmoke;
+}
+.check{
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 30px;
+}
+.listsp_2{
+    margin-left: 550px;
+    margin-top: 10%;
+    width: 800px;
+    height: 90%;
+    overflow-y:hidden;
+}
