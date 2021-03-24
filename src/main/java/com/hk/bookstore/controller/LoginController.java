@@ -65,7 +65,7 @@ public class LoginController {
 
     @RequestMapping("/signup")
     public String signup(){
-        return "/signup";
+        return "signup";
     }
     @RequestMapping("/spsuccess")
     public String success(@RequestParam("username") String username,@RequestParam("password") String password){
@@ -76,7 +76,7 @@ public class LoginController {
     public String adminlogin(Map<String,Object> map){
         return "adminlogin";
     }
-    @RequestMapping("/adminloginb")
+    @RequestMapping("adminloginb")
     public String adminloginb(@RequestParam("username") String username, @RequestParam("password") String password, Map<String,Object> map, HttpSession session){
         String s = adminMapper.getPassword(username);
         if(!StringUtils.isEmpty(username) && s.equals(password)){

@@ -77,7 +77,7 @@ public class BookController {
     }
     @RequestMapping("/addbook")
     public String addBook(){
-        return "/addbook";
+        return "addbook";
     }
     @RequestMapping("/adding")
     public String adding(HttpSession session,Map<String,Object> map,@RequestParam("title") String title,@RequestParam("author") String author,@RequestParam("categories") String categories,
