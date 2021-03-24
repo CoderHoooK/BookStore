@@ -142,7 +142,7 @@ public class cqyController {
     }
     @GetMapping("/result")
     public String result(){
-        return "/shopping";
+        return "shopping";
     }
 
 

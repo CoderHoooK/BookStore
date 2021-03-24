@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.hk.bookstore.BookstoreApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.954 s - in com.hk.bookstore.BookstoreApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.813 s - in com.hk.bookstore.BookstoreApplicationTests

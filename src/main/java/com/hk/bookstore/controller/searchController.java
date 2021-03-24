@@ -36,6 +36,6 @@ public class searchController {
         map.put("static",0);
         map.put("page",1);
         map.put("categ","search");
-        return "/index";
+        return "index";
     }
 }

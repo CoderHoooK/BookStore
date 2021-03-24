@@ -76,7 +76,7 @@ public class ShoppingcartController {
     @RequestMapping("/shoppingcart")
     public String cartList(Map<String,Object> map,int cid){
         map = selectOrderByCid(map,cid,0);
-        return"/shoppingcart";
+        return"shoppingcart";
     }
 
     @PostMapping("/orderad")
@@ -88,7 +88,7 @@ public class ShoppingcartController {
             sum+=order.getSumprice();
         }
         session.setAttribute("sumprice",sum);
-        return "/wtad";
+        return "wtad";
     }
 
 
@@ -102,18 +102,18 @@ public class ShoppingcartController {
 
         Object html = payService.pay("测试", Integer.toString(o.get(o.size()-1).getOid()),session.getAttribute("sumprice").toString());
         model.addAttribute("html",html);
-        return "/pay";
+        return "pay";
     }
     @GetMapping("/odelete")
     public String deleteOrder(Map<String,Object> map,HttpSession session,@RequestParam("oid") int oid) {
         orderMapper.delectByOid(oid);
         int cid = Integer.parseInt(session.getAttribute("cid").toString());
         map = selectOrderByCid(map,cid,0);
-        return "/shoppingcart";
+        return "shoppingcart";
     }
     @RequestMapping("/orderinfo")
     public String orderList(Map<String,Object> map,HttpSession session){
         map = selectOrderByCid(map,Integer.parseInt(session.getAttribute("cid").toString()),1);
-        return"/order";
+        return "order";
     }
 }

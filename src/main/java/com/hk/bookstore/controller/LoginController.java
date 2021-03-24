@@ -70,7 +70,7 @@ public class LoginController {
     @RequestMapping("/spsuccess")
     public String success(@RequestParam("username") String username,@RequestParam("password") String password){
         customerMapper.insertCustomer(username,password);
-        return "/login";
+        return "login";
     }
     @RequestMapping("/adminlogin")
     public String adminlogin(Map<String,Object> map){
@@ -100,7 +100,7 @@ public class LoginController {
                 i++;
             }
             map.put("books",bookmap);
-            return "/list";
+            return "list";
         }else{
             map.put("msg","用户名密码错误");
             return "adminlogin";

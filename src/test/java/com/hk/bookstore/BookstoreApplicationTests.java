@@ -7,7 +7,11 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
+
+import static java.lang.Math.abs;
 
 @SpringBootTest
 class BookstoreApplicationTests {
@@ -16,7 +20,12 @@ class BookstoreApplicationTests {
     CustomerMapper customerMapper;
     @Test
     void contextLoads() {
-        System.out.println(customerMapper.selectUsernameAndPassword("hook"));
+        int count = 0;
+        for(int i =0; i < 100; i ++)
+            count = count++;
+        System.out.println(count);
+
+
     }
 
 }

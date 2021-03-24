@@ -41,14 +41,14 @@ public class BookController {
         }
         map.put("books",bookmap);
 
-        return "/list";
+        return "list";
     }
 
     @RequestMapping("/updatebook")
     public String upadateBook(@RequestParam("bid") String bid, Map<String,Object> map){
         Book book = bookMapper.getBookById(Integer.parseInt(bid));
         map.put("book",book);
-        return "/updatebook";
+        return "updatebook";
     }
     @RequestMapping("/updating")
     public String updating(Map<String,Object> map,@RequestParam("bid") String bid,@RequestParam("title") String title,@RequestParam("author") String author,@RequestParam("categories") String categories,
@@ -73,7 +73,7 @@ public class BookController {
             i++;
         }
         map.put("books",bookmap);
-        return "/list";
+        return "list";
     }
     @RequestMapping("/addbook")
     public String addBook(){
@@ -101,6 +101,6 @@ public class BookController {
             i++;
         }
         map.put("books",bookmap);
-        return "/list";
+        return "list";
     }
 }
